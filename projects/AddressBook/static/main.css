@@ -1,0 +1,28 @@
+body{
+    background:lightblue;
+    margin-top: 50px;
+    margin-left: 450px;
+    align-items: center;
+}
+h1{
+    font-style: italic;
+    color: brown;
+    margin-left: 100px;
+}
+ul{
+    margin-right: 550px;
+}
+li{
+    border-style: solid;
+    border-width: thick 50px;
+    padding: 10px;
+}
+a:hover{
+    cursor:  pointer;
+    color: brown;
+
+}
+a{
+
+    text-decoration: none;
+}
