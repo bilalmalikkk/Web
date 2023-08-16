@@ -1,6 +1,6 @@
 # AddressBook Web Application
 
-Welcome to the **AddressBook** web application repository! This application allows you to manage and search contacts, making it easier to keep track of your connections. It's built using the Flask framework and provides various functionalities for adding, displaying, and searching contacts.
+Welcome to the **AddressBook** web application directory! This application allows you to manage and search contacts, making it easier to keep track of your connections. It's built using the Flask framework and provides various functionalities for adding, displaying, and searching contacts.
 
 ## Table of Contents
 
