@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddressBook</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'main.css')}}"">
+</head>
+<body>
+    <a href="/"><h3>Home Page</h3></a>
+    <h2>Recently Added Contact</h2>
+    <p>{{name}}</p>
+    <p>{{city}}</p>
+
+    <h1>Contact List</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>MobileNumber</th>
+            <th>City</th>
+            <th>Profession</th>
+        </tr>
+        {%for i in context %}
+            <tr>
+                <td>{{i["name"]}}</td>
+                <td>{{i["MobileNo"]}}</td>
+                <td>{{i["city"]}}</td>
+                <td>{{i["profession"]}}</td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+
+
+
+</body>
+</html>
