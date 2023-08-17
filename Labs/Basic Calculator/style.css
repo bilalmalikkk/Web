@@ -1,0 +1,36 @@
+.number
+{
+    width: 60px;
+    height: 20px;
+    margin: 10px;
+   
+} 
+.operator
+{
+    width: 60px;
+    height: 20px;
+    margin: 10px;
+   
+} 
+
+.output
+{
+    width: 320px;  
+    height: 30px;  
+}
+html, body {
+    height: 50%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
