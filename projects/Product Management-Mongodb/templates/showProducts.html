@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show products</title>
+          <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  	<script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js">
+
+    </script>
+</head>
+<body>
+    <input id="submit-btn" type="submit" value="show Products" name="submit">
+    <table id="mytable" class="table table-stripped">
+        <thead>
+            <td >
+                Name
+            </td>
+            <td>
+                Description
+            </td>
+            <td>
+                Price
+            </td>
+        </thead>
+    </table>
+</body>
+<footer>
+    <script>
+        $(document.body).on('click', '#submit-btn', function (e){
+            console.log("Lets move to ajex");
+            $.ajax({
+                type: "GET",
+                url: '/api/pro',
+                success: function (result){
+                    myData = result
+                    if(myData != null || myData !=""){
+                        console.log(myData)
+                        table = $('#mytable').DataTable({
+                            data: myData,
+                            destroy: true,
+                            columns: [
+                                {data: 'name'},
+                                {data: 'description'},
+                                {data: 'price'}
+                            ]
+                        })
+                    }
+                }
+            })
+        } );
+    </script>
+</footer>
+</html>

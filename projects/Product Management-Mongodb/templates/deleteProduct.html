@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show products</title>
+          <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  	<script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js">
+
+    </script>
+</head>
+<body>
+     <form id="myform">
+        <label for="name" class="form-label">Name</label>
+         <input type="text" class="form-control" id="name" name="name"><br>
+         <input id="submit-btn" type="button" name="submit" value="submit">
+    </form>
+</body>
+<footer>
+    <script>
+        $(document).ready(function(){
+            $("#submit-btn").on("click", function (){
+                var formdata= $("#myform").serializeArray();
+                var data={};
+                $(formdata).each(function (index, obj){
+                    data[obj.name] = obj.value
+                });
+                document.getElementById("name").value
+                data=JSON.stringify(data)
+                $.ajax({
+                    url: '/practice/pro/' + document.getElementById("name").value,
+                    type : "DELETE",
+                    data : data,
+                    dataType : 'json',
+                    contentType: "application/json; charset=utf-8",
+                    success : function(result) {
+                        console.log(result);
+                    },error: function(xhr, resp, text) {
+                        console.log(xhr, resp, text);
+
+                    }
+                })
+                console.log(data)
+            });
+        });
+    </script>
+</footer>
+</html>
