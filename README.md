@@ -1,6 +1,6 @@
 # Web
 
-Welcome to the **Web** repository! This repository is organized to house various web-related projects and lab assignments. Whether you're a beginner or an experienced developer, you'll find a variety of web development projects and exercises to explore and learn from.
+Welcome to the **Web** repository This repository is organized to house various web-related projects and lab assignments. Whether you're a beginner or an experienced developer, you'll find a variety of web development projects and exercises to explore and learn from.
 
 ## Table of Contents
 
